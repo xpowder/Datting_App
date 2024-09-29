@@ -5,32 +5,33 @@ from django.contrib.auth.models import User
 
 
 
+
 class UserProfile(models.Model):
     gender_choices = [
         ('Man', 'Man'),
         ('Woman', 'Woman'),
     ]
-
+    
     looking_choice = [
-         ('Man','Man'),
-        ('Woman','Woman'),
+        ('Man', 'Man'),
+        ('Woman', 'Woman'),
     ]
-
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     age = models.PositiveIntegerField()
     city = models.CharField(max_length=100)
-    gender = models.CharField(max_length=5, choices=gender_choices)
+    gender = models.CharField(max_length=6, choices=gender_choices)
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
-    looking_for = models.CharField(max_length=5, choices=looking_choice, default='')
-    city = models.CharField(max_length=100)
+    looking_for = models.CharField(max_length=6, choices=looking_choice, blank=True)
     country = models.CharField(max_length=100, default='')
     bio = models.TextField(max_length=1500, blank=True, null=True)
-    Current_goal = models.CharField(max_length=250, blank=True, null=True)
+    current_goal = models.CharField(max_length=250, blank=True, null=True)
     games = models.CharField(max_length=100, blank=True, null=True, default='')
-    My_golden_rule = models.CharField(max_length=250, blank=True, null=True)
+    my_golden_rule = models.CharField(max_length=250, blank=True, null=True)
     how_he_look = models.CharField(max_length=100, blank=True, null=True, default='')
     fav_book = models.CharField(max_length=100, blank=True, null=True, default='')
+    
     
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -80,7 +81,7 @@ class Preferences(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     preferred_age_min = models.PositiveIntegerField()
     preferred_age_max = models.PositiveIntegerField()
-    preferred_gender = models.CharField(max_length=1, choices=UserProfile.gender_choices)
+    preferred_gender = models.CharField(max_length=6, choices=UserProfile.gender_choices)
     preferred_city = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):

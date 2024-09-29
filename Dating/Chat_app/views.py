@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import *
 from .models import *
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -18,13 +19,25 @@ def home(request):
 
 @login_required
 def Create_Profile(request):
-    if request.method == "POST":  # Changed to check the method properly
+
+
+    try:
+        profile.user.userprofile
+        messages.waring(request, "You already have a profile, You can update it")
+        return redirect('profile_detail', profile_id=profile.id)
+    except UserProfile.DoesNotExist:
+        profile = None
+
+    if request.method == "POST":  
         form = UserProfileForm(request.POST, request.FILES)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user  # to Ensures the user is authenticated
-            profile.save()  # Added parentheses to the save method
-            return redirect('home')
+            profile.save()
+            messages.success(request, "Your profile has been created successfully!") 
+            return redirect('discover')
+        else:
+            messages.error(request, "Please fix the error below")
 
     else:
         form = UserProfileForm()
