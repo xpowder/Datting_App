@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href={% static "Css/style.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>You Me - Dating Website</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <h1 class="logo">You Me</h1>
+        <ul>
+            <li class="cool">Have an Account?</li>
+            <li><a class="login" href="{% url 'account_login' %}" onclick="toggleLoginForm()">Sign in</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-section">
+        <div class="text-content">
+            <h1 class="main-heading">DATING FOR EVERY SINGLE PERSON</h1>
+            <p class="description">
+                You Me is the dating platform that matches you on what truly matters.
+                <br>You deserve to find who you’re looking for. Meet them today!
+            </p>
+            <p class="terms">
+                By clicking Join, you agree to our <a href="#">Terms</a>.
+            </p>
+
+            <!-- Join Button -->
+            <button class="join-btn" onclick="toggleRegisterForm()">Join You Me</button>
+
+            <!-- App Icons -->
+            <div class="app-icons">
+                <img src="1664287128google-play-store-logo-png.png" alt="App Store">
+                <img src="1664287128google-play-store-logo-png.png" alt="App Store">
+            </div>
+        </div>
+
+        <!-- Image Slider -->
+        <div class="image-slider">
+            <img class="slide active" src="pexels-cinestyle-india-130159-1589216-removebg-preview.png" alt="Couple 1" style="display: block;">
+            <img class="slide" src="pexels-kampus-8914037-removebg-preview.png" alt="Couple 2" style="display: none;">
+            <img class="slide" src="pexels-visoesdomundo-2808658-removebg-preview.png" alt="Couple 2" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Login Form Modal -->
+    <div class="modal login-modal" id="loginModal">
+        <div class="modal-content login-form">
+            <span class="close-btn" onclick="toggleLoginForm()">×</span>
+            <h2>Login to Your Account</h2>
+            <form action="#" method="post">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="login-submit-btn">Sign In</button>
+            </form>
+            <p class="register-link">Don't have an account? <a href="#" onclick="toggleRegisterForm()">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Registration Form Modal -->
+    <div class="modal register-modal" id="registerModal">
+        <div class="modal-content register-form">
+            <span class="close-btn" onclick="toggleRegisterForm()">×</span>
+            <h2>Create Your Account</h2>
+            <form action="#" method="post">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" class="register-submit-btn">Register</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="{% url 'account_login' %}" onclick="toggleLoginForm()">Sign in here</a></p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-section">
+            <h4>COMPANY</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+        </div>
+        <div class="footer-section">
+            <h4>CONDITIONS</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Safety Tips</a>
+        </div>
+        <div class="footer-section">
+            <h4>FOLLOW</h4>
+            <a href="#">Blog</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>

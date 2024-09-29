@@ -1,0 +1,26 @@
+{% extends "navbar.html" %}
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Css/card.css' %}">
+
+<div class="profile-container">
+  {% for profile in profiles %}
+    <div class="profile-card">
+      <div class="profile-image">
+        {% if profile.profile_picture %}
+          <img src="{{ profile.profile_picture.url }}" alt="{{ profile.name }}">
+        {% else %}
+          <img src="{% static 'image/vecteezy_default-male-avatar-profile-icon-social-media-chatting_25337669.jpg' %}" alt="{{ profile.name }}">
+        {% endif %}
+      </div>
+      <div class="profile-info">
+        <h3>{{ profile.name }}</h3>
+        <p>Age: {{ profile.age }}</p>
+        <p>City: {{ profile.city }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

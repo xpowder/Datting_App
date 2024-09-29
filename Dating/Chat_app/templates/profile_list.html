@@ -1,0 +1,72 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+    {% load static %}
+    <link rel="stylesheet" href={% static "Css/profile_list.css" %}>
+    <div class="profile-container">
+        {% for profile in profiles %}
+        <!-- Profile Header with Action Buttons -->
+        <div class="profile-header">
+            <div class="profile-info">
+                <h2>{{ profile.name }}</h2>
+                <p>{{ profile.age }} - {{ profile.city }}, Morocco</p>
+            </div>
+    
+            <div class="profile-action">
+                
+                
+                <button class="btn pass" onclick="window.location.href='{% url 'dislike-profile' profile.pk %}'">X Pass</button>
+                <button class="btn like" onclick="window.location.href='{% url 'like-profile' profile.pk %}'">❤ Like</button>
+                <button class="btn superlike">💘 SUPERLIKE</button>
+            </div>
+        </div>
+    
+        <!-- Profile Images Carousel -->
+        <div class="profile-image">
+            <div class="image-card">
+                {% if profile.profile_picture %}
+                    <img src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                    <img src="/path/to/default-image.jpg" alt="Default Profile Picture">
+                {% endif %}
+            </div>
+        </div>
+    
+        <!-- Bio and Details Section -->
+        <div class="content-section">
+    
+            <!-- Bio Section -->
+            <div class="bio-section">
+                <h3>My self-summary</h3>
+                <p>{{ profile.bio }}</p>
+                <button class="intro-btn"><i class="fa fa-comment-o" aria-hidden="true"></i> INTRO</button>
+    
+                <h3>Current goal</h3>
+                <p>{{profile.Current_goal}}</p>
+                <button class="intro-btn">INTRO</button>
+    
+                <h3>I could probably beat you at</h3>
+                <p>{{profile.games}}</p>
+                <button class="intro-btn">INTRO</button>
+
+
+                <h3>What I'm Acully Look L</h3>
+                <p>{{profile.games}}</p>
+                <button class="intro-btn">INTRO</button>
+            </div>
+    
+            <!-- Details Section -->
+            <div class="details-section">
+                <h3>Details</h3>
+                <ul class="details-list">
+                    <li><i class="fas fa-venus-mars"></i> {{ profile.gender }} | Straight | Monogamous (Single)</li>
+                    <li><i class="fas fa-eye"></i> Looking for {{profile.looking_for}} | Short-term dating & Long-term dating</li>
+                    <li><i class="fas fa-user-graduate"></i> College Graduate</li>
+                    <li><i class="fas fa-briefcase"></i> Works in Marketing</li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

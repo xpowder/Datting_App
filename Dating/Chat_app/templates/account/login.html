@@ -1,0 +1,46 @@
+<style>
+
+    .login-submit-btn, .register-submit-btn {
+        background-color: #ff3c5f;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .login-submit-btn:hover {
+        background-color: #e03350;
+      }
+      
+      /* Links within Forms */
+      .register-link, .login-link {
+        margin-top: 15px;
+        font-size: 0.9rem;
+      }
+      
+      .register-link a, .login-link a {
+        color: #ff3c5f;
+        text-decoration: underline;
+      }
+      
+
+
+</style>
+<div class="modal login-modal" id="loginModal">
+    <div class="modal-content login-form">
+        <span class="close-btn" onclick="toggleLoginForm()">×</span>
+        <h2>Login to Your Account</h2>
+        <form action="{% url 'account_login' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-submit-btn">Sign In</button>
+        </form>
+        <p class="register-link">
+            Don't have an account? <a href="{% url 'account_signup' %}">Register here</a>
+        </p>
+    </div>
+</div>

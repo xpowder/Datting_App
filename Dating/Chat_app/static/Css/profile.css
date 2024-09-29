@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #101728;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+/* Styling for the logo */
+.nav-bar .logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3c5f; /* Logo color */
+}
+
+/* Centering the h1 text */
+.nav-bar h1 {
+    margin: 5px auto;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Navigation links styling */
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-bar ul li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar ul li:not(:first-child) {
+    margin-left: 10px;
+}
+
+/* Profile Container */
+.profile-container {
+    width: 40%;
+    margin: 200px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #9340ff;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-step {
+    display: none;
+    width: 100%;
+}
+
+.form-step.active {
+    display: block;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    background-color: #ff3c5f;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #ff4c6f;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        width: 80%;
+    }
+}

@@ -1,0 +1,182 @@
+
+.profile-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Top Section with Action Buttons */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    margin: 10px;
+}
+
+.profile-action {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.profile-action .btn {
+    padding: 10px 20px;
+    
+    cursor: pointer;
+    
+    border-radius: 77px;
+}
+
+.pass { 
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+.like { 
+    border: none;
+    color: #ffffff;
+    background-color: #ff0000; 
+}
+.superlike { 
+    border: none;
+    color: #ffffff;
+    background-color: #7507f3; 
+}
+
+.pass:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.like:hover {
+    background-color: #ff8ba1;
+}
+.superlike:hover{
+    background-color: hsl(266, 95%, 75%);
+}
+
+/* Profile Images Carousel */
+.profile-image {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    overflow-x: unset;
+    margin: 15px 0;
+    
+}
+
+.image-card img {
+   
+    height: 300px;
+    margin-right: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+/* Bio and Details Section */
+.content-section {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+
+}
+
+.bio-section, .details-section {
+    width: 48%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.24);
+    margin-bottom: 10px;
+    
+}
+
+.bio-section h3, .details-section h3 {
+    margin: 10px 0;
+    padding: 3px;
+    background-color: #000000;
+    color: white;
+    border-radius: 6px 6px 0 0;
+}
+
+.bio-section p {
+    margin: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.intro-btn {
+    background-color: #ffffff;
+    color: rgb(40, 2, 255);
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 19px 19px 19px 0px;
+    cursor: pointer;
+}
+.intro-btn:hover{
+    background-color: #000000;
+    color: #f4f4f9;
+}
+
+/* Details List */
+.details-list {
+    list-style: none;
+    margin: 5px;
+    padding: 0;
+}
+
+.details-list li {
+    margin-bottom: 19px;
+}
+
+.details-list li i {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  footer .footer-section {
+    margin: 10px 20px;
+  }
+  
+  footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    display: block;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
