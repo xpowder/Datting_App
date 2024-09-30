@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }}'s Profile</title>
+   
+</head>
+<body>
+{% load static %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>{{ profile.name }}'s Profile</h1>
+            {% if profile.profile_picture %}
+                <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+            {% else %}
+                <img src="{% static 'image/default-profile.png' %}" alt="Default Profile Picture" class="profile-picture">
+            {% endif %}
+        </div>
+
+        <div class="profile-details">
+            <p><strong>Age:</strong> {{ profile.age }}</p>
+            <p><strong>Gender:</strong> {{ profile.get_gender_display }}</p>
+            <p><strong>City:</strong> {{ profile.city }}</p>
+            <p><strong>Looking for:</strong> {{ profile.looking_for }}</p>
+            <p><strong>Bio:</strong> {{ profile.bio }}</p>
+            <p><strong>Current Goal:</strong> {{ profile.current_goal }}</p>
+            <p><strong>My Golden Rule:</strong> {{ profile.my_golden_rule }}</p>
+            <p><strong>Favorite Books:</strong> {{ profile.fav_book }}</p>
+        </div>
+
+        <div class="profile-actions">
+            {% if request.user == profile.user %}
+                <a href="#" class="btn">Edit Profile</a>
+                <a href="#" class="btn btn-danger">Delete Profile</a>
+            {% endif %}
+            <a href="{% url 'discover' %}" class="btn">Discover Other Profiles</a>
+        </div>
+    </div>
+
+</body>
+</html>

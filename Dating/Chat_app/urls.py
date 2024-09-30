@@ -10,10 +10,11 @@ urlpatterns = [
     path('discover/', views.Profile_list, name='discover'),
     path('profile/<int:pk>/like/', views.Like_profile, name='like-profile'),
     path('profile/<int:pk>/dislike/', views.Dislike_profile, name='dislike-profile'),
-    path('likes/', views.profile_like_list, name='likes-profiles')
+    path('likes/', views.profile_like_list, name='likes-profiles'),
+    path('profile/<int:pk>/detail/', views.profiles_details, name='profile-detail')
     
 ]
 
 
-if settings.DEBUG:  # Only serve media in debug mode
+if settings.DEBUG:  
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

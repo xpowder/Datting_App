@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
 
-/* Navigation Bar */
+
 .nav-bar {
     background-color: #101728;
     padding: 20px;
@@ -21,22 +21,22 @@ body {
     color: #ffffff;
 }
 
-/* Styling for the logo */
+
 .nav-bar .logo a {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-    color: #ff3c5f; /* Logo color */
+    color: #ff3c5f; 
 }
 
-/* Centering the h1 text */
+
 .nav-bar h1 {
     margin: 5px auto;
     color: #ffffff;
     text-align: center;
 }
 
-/* Navigation links styling */
+
 .nav-bar ul {
     list-style: none;
     display: flex;
@@ -55,7 +55,7 @@ body {
     margin-left: 10px;
 }
 
-/* Profile Container */
+
 .profile-container {
     width: 40%;
     margin: 200px auto;
@@ -71,7 +71,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Form Styling */
+
 #profileForm {
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ button:hover {
     background-color: #ff4c6f;
 }
 
-/* Responsive Styling */
+
 @media screen and (max-width: 768px) {
     .profile-container {
         width: 80%;

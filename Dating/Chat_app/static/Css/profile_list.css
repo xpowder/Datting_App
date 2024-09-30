@@ -5,7 +5,7 @@
     padding: 20px;
 }
 
-/* Top Section with Action Buttons */
+
 .profile-header {
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@
     background-color: hsl(266, 95%, 75%);
 }
 
-/* Profile Images Carousel */
+
 .profile-image {
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@
     border-radius: 8px;
 }
 
-/* Bio and Details Section */
+
 .content-section {
     display: flex;
     gap: 10px;

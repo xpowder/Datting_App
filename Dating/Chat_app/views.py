@@ -22,9 +22,9 @@ def Create_Profile(request):
 
 
     try:
-        profile.user.userprofile
-        messages.waring(request, "You already have a profile, You can update it")
-        return redirect('profile_detail', profile_id=profile.id)
+        profile = request.user.userprofile
+        messages.warning(request, "You already have a profile, you can update it.")
+        return redirect('profile-detail', pk=profile.id)
     except UserProfile.DoesNotExist:
         profile = None
 
@@ -52,6 +52,12 @@ def Profile_list(request):
 
 
 
+def profiles_details(request, pk):
+    profile = get_object_or_404(UserProfile, pk=pk)
+    context = {'profile': profile}
+    return render(request, 'profile_detail.html', context)
+
+
 def Like_profile(request, pk):
     profile = get_object_or_404(UserProfile, pk=pk)
     LikeDislike.objects.update_or_create(
@@ -75,8 +81,6 @@ def Dislike_profile(request, pk):
 
 
 def profile_like_list(request):
-    liked_users = LikeDislike.objects.filter(user_from=request.user, is_like=True).values_list('user_to', flat=True)
-    
+    liked_users = LikeDislike.objects.filter(user_from=request.user, is_like=True).values_list('user_to', flat=True)    
     profiles = UserProfile.objects.filter(user__in=liked_users)
-
     return render(request, 'liked_profile.html', {'profiles': profiles})

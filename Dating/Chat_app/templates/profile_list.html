@@ -1,5 +1,6 @@
 {% extends 'navbar.html' %}
 {% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 
     {% load static %}
     <link rel="stylesheet" href={% static "Css/profile_list.css" %}>
@@ -21,21 +22,20 @@
             </div>
         </div>
     
-        <!-- Profile Images Carousel -->
+       
         <div class="profile-image">
             <div class="image-card">
                 {% if profile.profile_picture %}
                     <img src="{{ profile.profile_picture.url }}" alt="Profile Picture">
                 {% else %}
-                    <img src="/path/to/default-image.jpg" alt="Default Profile Picture">
+                <img src="{% static 'image/vecteezy_default-male-avatar-profile-icon-social-media-chatting_25337669.jpg' %}" alt="{{ profile.name }}">
                 {% endif %}
             </div>
         </div>
     
-        <!-- Bio and Details Section -->
+     
         <div class="content-section">
     
-            <!-- Bio Section -->
             <div class="bio-section">
                 <h3>My self-summary</h3>
                 <p>{{ profile.bio }}</p>
@@ -68,5 +68,10 @@
         </div>
         {% endfor %}
     </div>
+
+
+    <scr>
+
+    </scr>
     
 {% endblock %}

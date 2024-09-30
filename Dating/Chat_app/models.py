@@ -19,7 +19,7 @@ class UserProfile(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    age = models.PositiveIntegerField()
+    age = models.IntegerField()
     city = models.CharField(max_length=100)
     gender = models.CharField(max_length=6, choices=gender_choices)
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)

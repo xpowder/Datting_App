@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 
-/* Styling body */
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f9;
 }
 
-/* Styling navigation bar */
+
 .nav-bar {
     position: sticky;
     display: flex;
@@ -23,15 +23,15 @@ body {
     z-index: 1000;
 }
 
-/* Styling logo */
+
 .logo a {
     font-size: 24px;
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    display: inline-block; /* Ensures only the text has the background */
+    display: inline-block; 
     padding: 5px 10px;
-    border-radius: 5px; /* Optional: adds rounded corners */
+    border-radius: 5px; 
     transition: color 0.3s, background-color 0.3s;
 }
 
@@ -41,7 +41,7 @@ body {
     color: #9340ff;
 }
 
-/* Styling navigation links */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -56,12 +56,12 @@ body {
     border-radius: 5px;
 }
 
-/* Hover effect on navigation links */
+
 .nav-links a:hover {
     background-color: #9340ff;
 }
 
-/* Styling profile image */
+
 .profile {
     position: relative;
     display: flex;
@@ -80,7 +80,7 @@ body {
 .profile-img:hover {
     transform: scale(1.1);
 }
-/* Add some spacing between icons and text */
+
 .nav-links a i {
     margin-right: 8px;
 }
